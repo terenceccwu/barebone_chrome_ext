@@ -7,3 +7,8 @@ chrome.browserAction.onClicked.addListener(function (tab) {
 		file: 'inject.js'
 	});
 });
+
+chrome.runtime.onMessage.addListener(function(msg,sender,sendResponse) {
+	console.log(msg); // will be printed in back end
+	sendResponse({msg:'this is the response'}); // callback passed from front end (chrome.runtime.sendMessage)
+});
