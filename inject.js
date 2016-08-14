@@ -10,6 +10,10 @@
 	div.textContent = 'Injected!';
 	document.body.appendChild(div);
 
-	alert('inserted self... giggity');
-	$('body').html('<h1>hacked!</h1>');
+	chrome.runtime.sendMessage(null,{
+		msg: 'hello!'
+	},null, function(response) {
+		console.log(response); // will be printed in front end
+	});
+
 })();
