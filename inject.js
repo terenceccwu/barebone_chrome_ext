@@ -11,5 +11,5 @@
 	document.body.appendChild(div);
 
 	alert('inserted self... giggity');
-
+	$('body').html('<h1>hacked!</h1>');
 })();
